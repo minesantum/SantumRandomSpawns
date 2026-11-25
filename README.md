@@ -17,8 +17,8 @@
 
 ## Requisitos
 
-* **Servidor:** Spigot / Paper (o derivados compatibles).
-* **Java:** Java 17 o superior (recomendado según el entorno de compilación Gradle).
+* **Servidor:** Paper (o derivados compatibles)
+* **Java:** Java 21 o superior (recomendado según el entorno de compilación Gradle)
 
 ---
 
@@ -27,7 +27,7 @@
 1. Descarga o compila el archivo `SantumRandomSpawns-1.0.0.jar`.
 2. Coloca el archivo `.jar` dentro de la carpeta `plugins/` de tu servidor.
 3. Inicia o reinicia el servidor para que se generen los archivos de configuración por defecto (`config.yml` y la carpeta `randomspawns/`).
-4. Edita las configuraciones según tus necesidades y recarga el plugin.
+4. Edita las configuraciones según tus necesidades y recarga el plugin
 
 ---
 
@@ -47,15 +47,24 @@ plugins/SantumRandomSpawns/
 Puedes crear tantos archivos `.yml` como desees dentro de `randomspawns/`. Cada archivo define las reglas de aparición:
 
 ```yaml
-# Ejemplo ilustrativo de estructura basada en los modelos del plugin
-ejemplo_npc:
-  worlds:
-    - world
-  cluster_size: 1-3
-  conditions:
-    - "y >= 60"
-    - "y <= 120"
-  chance: 0.5
+randomspawn_name:
+  enable: true
+  npc_id: 2
+  separation_block_radius: 10
+  chance: 100
+  spawn_radius: 5
+  size: 1
+  # Si es true, los NPC clonados persiguen y atacan al jugador más cercano (si el NPC usa Sentinel, este lo gestiona él).
+  target_players: true
+  # Distancia máxima en bloques para elegir objetivo
+  target_range: 10
+  worlds_spawn:
+    world:
+      dimensions: overworld
+      biomes: BEACH
+      reason: NATURAL
+  conditions_to_spawn:
+  - '%player_level% == 5'
 ```
 *(Nota: Ajusta las claves exactas según la plantilla generada en `src/main/resources/randomspawns/ejemplo.yml`).*
 

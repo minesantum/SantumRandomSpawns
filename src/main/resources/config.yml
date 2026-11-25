@@ -1,0 +1,37 @@
+# SantumRandomSpawns - Configuración
+# Creador: DonKolia
+
+spawning:
+  # Cada cuántos ticks se comprueban los random spawns (20 ticks = 1 segundo)
+  interval-ticks: 40
+  # Máximo de NPCs de random spawn permitidos en la zona de un jugador/grupo (evita stackeo)
+  max-local-npcs: 10
+
+conditions:
+  # Cada cuántos ticks se vuelven a evaluar las conditions_to_spawn de los NPC ya spawneados (10 = 0,5 s)
+  recheck-ticks: 10
+
+despawn:
+  # Distancia en bloques a la que despawnea el NPC si no hay jugadores cerca
+  despawn-distance: 64
+  # Si es true, despawnea el NPC cuando su chunk se descarga
+  despawn-on-chunk-unload: true
+
+debug: false
+
+# Si es true, en el mundo SOLO existen los NPC (Citizens): los de este plugin y los que ya tengas de Citizens.
+# - Se cancela cualquier spawn de mobs (naturales, spawners, huevos, crianza, raids, /summon...).
+# - Se ELIMINAN los mobs que ya existían (al iniciar, al recargar y al cargarse chunks). Es permanente:
+#   también se borran mascotas, aldeanos y mobs de otros plugins que no sean NPC de Citizens.
+DisableVanillaSpawns: false
+
+messages:
+  prefix: "&8[&6SantumRandomSpawns&8] "
+  no-permission: "&cNo tienes permiso para usar este comando."
+  reloaded: "&aConfiguración y &e{count} &arandom spawns recargados correctamente en tiempo real."
+  enabled: "&aRandomSpawn &e{name} &ahabilitado correctamente."
+  disabled: "&cRandomSpawn &e{name} &cdeshabilitado correctamente."
+  not-found: "&cNo se encontró ningún RandomSpawn llamado &e{name}&c."
+  already-enabled: "&eEl RandomSpawn &6{name} &eya está habilitado."
+  already-disabled: "&eEl RandomSpawn &6{name} &eya está deshabilitado."
+  usage: "&eUso: &f/santumrandomspawns <reload|enable|disable> [nombre]"

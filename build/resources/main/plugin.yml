@@ -1,0 +1,23 @@
+name: SantumRandomSpawns
+version: 1.0.0
+main: com.donkolia.santumrandomspawns.SantumRandomSpawns
+api-version: '1.21'
+author: DonKolia
+description: MythicMobs-style Random Spawns for Citizens2 with ConditionalEvents-style conditions.
+depend:
+  - Citizens
+softdepend:
+  - PlaceholderAPI
+
+commands:
+  santumrandomspawns:
+    description: Manage SantumRandomSpawns plugin and random spawns.
+    usage: /santumrandomspawns <reload|enable|disable> [name]
+    aliases:
+      - srs
+    permission: santumrandomspawns.admin
+
+permissions:
+  santumrandomspawns.admin:
+    description: Allows using all /santumrandomspawns commands.
+    default: op

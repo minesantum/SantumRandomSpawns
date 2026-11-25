@@ -1,0 +1,27 @@
+# Archivo de ejemplo para SantumRandomSpawns
+# Puedes crear subcarpetas dentro de plugins/SantumRandomSpawns/randomspawns/
+# y organizar tus archivos .yml como prefieras.
+
+randomspawn_uno:
+  enable: false
+  npc_id: 2, 23
+  separation_block_radius: 10
+  chance: 48.105
+  spawn_radius: 1-5
+  size: 1-5
+  # Si es true, los NPC clonados persiguen y atacan al jugador más cercano (si el NPC usa Sentinel, este lo gestiona él).
+  target_players: true
+  # Distancia máxima en bloques para elegir objetivo
+  target_range: 16
+  worlds_spawn:
+    "world":
+      dimensions: overworld
+      biomes: BEACH, PLAINS
+      reason: NATURAL
+    "world2":
+      dimensions: overworld, nether, end
+      biomes: JUNGLE, PLAINS
+      reason: NATURAL
+  conditions_to_spawn:
+    - "%player_level% == 5 OR %player_level% == 10"
+    - "%player_level% == 5 AND %player_level% == 10"
